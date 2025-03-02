@@ -1,0 +1,107 @@
+<div class="property-search-form">
+  <form method="GET" action="/property/">
+    <div class="search-filters">
+      <div class="date-filter">
+        <label for="check_in">Check-in Date</label>
+        <input type="date" id="check_in" name="check_in" required>
+      </div>
+      
+      <div class="date-filter">
+        <label for="check_out">Check-out Date</label>
+        <input type="date" id="check_out" name="check_out" required>
+      </div>
+      
+      <div class="guests-filter">
+        <label for="adults">Adults</label>
+        <select id="adults" name="adults">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+      
+      <div class="guests-filter">
+        <label for="children">Children</label>
+        <select id="children" name="children">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      
+      <div class="property-type-filter">
+        <label for="property_type">Property Type</label>
+        <select id="property_type" name="property_type">
+          <option value="">All Types</option>
+          {{{ property_types_options }}}
+        </select>
+      </div>
+      
+      <div class="submit-button">
+        <button type="submit">Search Properties</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<style>
+.property-search-form {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.date-filter, .guests-filter, .property-type-filter {
+  flex: 1;
+  min-width: 150px;
+}
+
+.submit-button {
+  display: flex;
+  align-items: flex-end;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background: #0073aa;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #005177;
+}
+
+@media (max-width: 768px) {
+  .search-filters {
+    flex-direction: column;
+  }
+}
+</style>
